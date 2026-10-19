@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 20 91% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --teal: 172 84% 31%;
+    --teal-foreground: 0 0% 100%;
+
+    --green: 142 71% 45%;
+    --green-foreground: 0 0% 100%;
+
+    --purple: 262 83% 58%;
+    --purple-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient-from: 217 91% 60%;
+    --hero-gradient-to: 172 84% 31%;
+    
+    --card-glow: 217 91% 60%;
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-typewriter {
+    animation: typewriter 3s steps(30) infinite;
+  }
+
+  @keyframes typewriter {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-teal bg-clip-text text-transparent;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 40px -10px hsl(var(--card-glow) / 0.3);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
